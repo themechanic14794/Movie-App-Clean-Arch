@@ -1,5 +1,6 @@
 package com.example.movieapp.presentation.viewmodels
 
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -17,7 +18,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieDetailsViewModel @Inject constructor(private val movieDetailsUseCase: GetMovieDetailsUseCase,savedStateHandle: SavedStateHandle) : ViewModel() {
 
-    val movieDetailsStateHolder = mutableStateOf(MovieDetailsStateHolder())
+    private val _movieDetailsStateHolder = mutableStateOf(MovieDetailsStateHolder())
+    val movieDetailsStateHolder : State<MovieDetailsStateHolder> = _movieDetailsStateHolder
 
     init {
         viewModelScope.launch {
@@ -36,15 +38,15 @@ class MovieDetailsViewModel @Inject constructor(private val movieDetailsUseCase:
             when(it){
 
                 is Resource.Loading -> {
-                    movieDetailsStateHolder.value = MovieDetailsStateHolder(isLoading = true)
+                    _movieDetailsStateHolder.value = MovieDetailsStateHolder(isLoading = true)
                 }
 
                 is Resource.Success -> {
-                    movieDetailsStateHolder.value = MovieDetailsStateHolder(data = it.data)
+                    _movieDetailsStateHolder.value = MovieDetailsStateHolder(data = it.data)
                 }
 
                 is Resource.Error -> {
-                    movieDetailsStateHolder.value = MovieDetailsStateHolder(error = it.message.toString())
+                    _movieDetailsStateHolder.value = MovieDetailsStateHolder(error = it.message.toString())
                 }
             }
         }.launchIn(viewModelScope)

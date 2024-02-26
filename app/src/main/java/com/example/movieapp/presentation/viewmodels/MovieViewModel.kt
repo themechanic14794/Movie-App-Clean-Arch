@@ -1,5 +1,6 @@
 package com.example.movieapp.presentation.viewmodels
 
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,7 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieViewModel @Inject constructor(private val movieUseCase: GetMovieUseCase): ViewModel() {
 
-    val movieListStateHolder = mutableStateOf(MovieStateHolder())
+    private val _movieListStateHolder = mutableStateOf(MovieStateHolder())
+    val movieListStateHolder : State<MovieStateHolder> = _movieListStateHolder
 
     init {
         getMovieList()
@@ -26,13 +28,13 @@ class MovieViewModel @Inject constructor(private val movieUseCase: GetMovieUseCa
         movieUseCase().onEach {
                 when(it){
                     is Resource.Loading -> {
-                        movieListStateHolder.value = MovieStateHolder(isLoading = true)
+                        _movieListStateHolder.value = MovieStateHolder(isLoading = true)
                     }
                     is Resource.Success -> {
-                        movieListStateHolder.value = MovieStateHolder(data = it.data)
+                        _movieListStateHolder.value = MovieStateHolder(data = it.data)
                     }
                     is Resource.Error -> {
-                        movieListStateHolder.value = MovieStateHolder(error= it.message.toString())
+                        _movieListStateHolder.value = MovieStateHolder(error= it.message.toString())
                     }
 
                 }
