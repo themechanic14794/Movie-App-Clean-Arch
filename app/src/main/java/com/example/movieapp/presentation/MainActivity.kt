@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.example.movieapp.navigation.MovieNavigation
-import com.example.movieapp.ui.theme.MovieAppTheme
+import com.example.movieapp.presentation.navigation.MovieNavigation
+import com.example.movieapp.presentation.theme.MovieAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

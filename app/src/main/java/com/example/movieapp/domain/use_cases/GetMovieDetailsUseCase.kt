@@ -1,6 +1,6 @@
 package com.example.movieapp.domain.use_cases
 
-import com.example.movieapp.common.Resource
+import com.example.movieapp.core.common.Resource
 import com.example.movieapp.domain.model.details.MovieDetails
 import com.example.movieapp.domain.repository.GetMovieDetailsRepository
 import kotlinx.coroutines.flow.Flow

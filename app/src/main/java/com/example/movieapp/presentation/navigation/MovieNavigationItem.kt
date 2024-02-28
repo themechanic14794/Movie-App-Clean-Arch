@@ -1,4 +1,4 @@
-package com.example.movieapp.navigation
+package com.example.movieapp.presentation.navigation
 
 sealed class MovieNavigationItem (val route : String) {
 

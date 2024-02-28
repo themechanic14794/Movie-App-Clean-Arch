@@ -1,4 +1,4 @@
-package com.example.movieapp.navigation
+package com.example.movieapp.presentation.navigation
 
 import android.util.Log
 import androidx.compose.runtime.Composable

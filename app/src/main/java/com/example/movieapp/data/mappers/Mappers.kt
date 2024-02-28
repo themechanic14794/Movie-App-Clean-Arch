@@ -1,4 +1,4 @@
-package com.example.movieapp.mappers
+package com.example.movieapp.data.mappers
 
 import com.example.movieapp.data.model.details.MovieDetailsDTO
 import com.example.movieapp.data.model.list.MovieDTO

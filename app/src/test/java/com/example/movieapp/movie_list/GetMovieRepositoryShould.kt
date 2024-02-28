@@ -6,7 +6,7 @@ import com.example.movieapp.data.model.list.MovieListResponseDTO
 import com.example.movieapp.data.network.ApiService
 import com.example.movieapp.data.repository.GetMoviesRepositoryImpl
 import com.example.movieapp.domain.repository.GetMovieRepository
-import com.example.movieapp.mappers.toDomain
+import com.example.movieapp.data.mappers.toDomain
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert

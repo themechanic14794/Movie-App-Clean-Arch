@@ -2,7 +2,7 @@ package com.example.movieapp.movie_details
 
 import androidx.lifecycle.SavedStateHandle
 import com.example.movieapp.MainCoroutineRule
-import com.example.movieapp.common.Resource
+import com.example.movieapp.core.common.Resource
 import com.example.movieapp.domain.model.details.MovieDetails
 import com.example.movieapp.domain.use_cases.GetMovieDetailsUseCase
 import com.example.movieapp.presentation.viewmodels.MovieDetailsViewModel

@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.movieapp.common.Resource
+import com.example.movieapp.core.common.Resource
 import com.example.movieapp.domain.use_cases.GetMovieDetailsUseCase
 import com.example.movieapp.presentation.stateholders.MovieDetailsStateHolder
 import dagger.hilt.android.lifecycle.HiltViewModel

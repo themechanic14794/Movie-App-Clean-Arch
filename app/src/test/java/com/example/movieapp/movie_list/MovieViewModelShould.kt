@@ -1,7 +1,7 @@
 package com.example.movieapp.movie_list
 
 import com.example.movieapp.MainCoroutineRule
-import com.example.movieapp.common.Resource
+import com.example.movieapp.core.common.Resource
 import com.example.movieapp.domain.model.list.Movie
 import com.example.movieapp.domain.use_cases.GetMovieUseCase
 import com.example.movieapp.presentation.viewmodels.MovieViewModel

@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.movieapp.navigation.MovieNavigationItem
+import com.example.movieapp.presentation.navigation.MovieNavigationItem
 import com.example.movieapp.presentation.components.MovieItem
 import com.example.movieapp.presentation.viewmodels.MovieViewModel
 
