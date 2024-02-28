@@ -1,7 +1,7 @@
-package com.example.movieapp.data.mappers
+package com.example.movieapp.data.remote.mappers
 
-import com.example.movieapp.data.model.details.MovieDetailsDTO
-import com.example.movieapp.data.model.list.MovieDTO
+import com.example.movieapp.data.remote.model.details.MovieDetailsDTO
+import com.example.movieapp.data.remote.model.list.MovieDTO
 import com.example.movieapp.domain.model.details.MovieDetails
 import com.example.movieapp.domain.model.list.Movie
 

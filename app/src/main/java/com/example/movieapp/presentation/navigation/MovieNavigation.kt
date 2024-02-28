@@ -5,8 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.movieapp.presentation.screens.MovieListScreen
-import com.example.movieapp.presentation.screens.MovieDetailsScreen
+import com.example.movieapp.presentation.movies.screens.MovieListScreen
+import com.example.movieapp.presentation.movies.screens.MovieDetailsScreen
 
 @Composable
 fun MovieNavigation(navHostController: NavHostController) {

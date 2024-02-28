@@ -1,4 +1,4 @@
-package com.example.movieapp.presentation.screens
+package com.example.movieapp.presentation.movies.screens
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
@@ -18,8 +18,8 @@ import androidx.compose.ui.platform.testTag
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.movieapp.presentation.navigation.MovieNavigationItem
-import com.example.movieapp.presentation.components.MovieItem
-import com.example.movieapp.presentation.viewmodels.MovieViewModel
+import com.example.movieapp.presentation.movies.components.MovieItem
+import com.example.movieapp.presentation.movies.viewmodels.MovieViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

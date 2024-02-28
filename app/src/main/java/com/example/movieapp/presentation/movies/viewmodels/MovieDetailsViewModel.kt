@@ -1,4 +1,4 @@
-package com.example.movieapp.presentation.viewmodels
+package com.example.movieapp.presentation.movies.viewmodels
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movieapp.core.common.Resource
 import com.example.movieapp.domain.use_cases.GetMovieDetailsUseCase
-import com.example.movieapp.presentation.stateholders.MovieDetailsStateHolder
+import com.example.movieapp.presentation.movies.stateholders.MovieDetailsStateHolder
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.launchIn

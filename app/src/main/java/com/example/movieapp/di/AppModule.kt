@@ -1,5 +1,6 @@
-package com.example.movieapp.domain.di
+package com.example.movieapp.di
 
+import com.example.movieapp.core.utils.Constants
 import com.example.movieapp.data.network.ApiService
 import com.example.movieapp.data.repository.GetMovieDetailsRepositoryImpl
 import com.example.movieapp.data.repository.GetMoviesRepositoryImpl
@@ -11,28 +12,41 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
 
 @InstallIn(SingletonComponent::class)
 @Module
-object DomainModule {
+object AppModule {
+    @Provides
+    fun provideRetrofit(): Retrofit {
+        return Retrofit.Builder().baseUrl(Constants.BASE_URL).addConverterFactory(
+            GsonConverterFactory.create()).build()
+    }
 
     @Provides
-    fun providesGetMoviesRepository(apiService: ApiService) : GetMovieRepository{
+    fun provideApiService(retrofit: Retrofit) : ApiService {
+        return retrofit.create(ApiService::class.java)
+    }
+
+    @Provides
+    fun providesGetMoviesRepository(apiService: ApiService) : GetMovieRepository {
         return GetMoviesRepositoryImpl(apiService)
     }
 
     @Provides
-    fun providesGetMovieDetailsRepository(apiService: ApiService):GetMovieDetailsRepository{
+    fun providesGetMovieDetailsRepository(apiService: ApiService): GetMovieDetailsRepository {
         return GetMovieDetailsRepositoryImpl(apiService)
     }
 
     @Provides
-    fun providesGetMovieUseCase(getMovieRepository: GetMovieRepository) : GetMovieUseCase{
+    fun providesGetMovieUseCase(getMovieRepository: GetMovieRepository) : GetMovieUseCase {
         return GetMovieUseCase(getMovieRepository)
     }
 
     @Provides
-    fun providesGetMovieDetailsUseCase (getMovieDetailsRepository: GetMovieDetailsRepository) : GetMovieDetailsUseCase{
+    fun providesGetMovieDetailsUseCase (getMovieDetailsRepository: GetMovieDetailsRepository) : GetMovieDetailsUseCase {
         return GetMovieDetailsUseCase(getMovieDetailsRepository)
     }
 }

@@ -1,4 +1,4 @@
-package com.example.movieapp.data.model.list
+package com.example.movieapp.data.remote.model.list
 
 data class MovieListResponseDTO(
     val page: Int?,

@@ -5,7 +5,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import com.example.movieapp.domain.model.list.Movie
-import com.example.movieapp.presentation.components.MovieItem
+import com.example.movieapp.presentation.movies.components.MovieItem
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
