@@ -5,7 +5,7 @@ import com.example.movieapp.MainCoroutineRule
 import com.example.movieapp.core.common.Resource
 import com.example.movieapp.domain.model.details.MovieDetails
 import com.example.movieapp.domain.use_cases.GetMovieDetailsUseCase
-import com.example.movieapp.presentation.viewmodels.MovieDetailsViewModel
+import com.example.movieapp.presentation.movies.viewmodels.MovieDetailsViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest

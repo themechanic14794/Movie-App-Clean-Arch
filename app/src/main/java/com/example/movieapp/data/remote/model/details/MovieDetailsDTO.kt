@@ -1,4 +1,4 @@
-package com.example.movieapp.data.model.details
+package com.example.movieapp.data.remote.model.details
 
 data class MovieDetailsDTO(
     val adult: Boolean?,
