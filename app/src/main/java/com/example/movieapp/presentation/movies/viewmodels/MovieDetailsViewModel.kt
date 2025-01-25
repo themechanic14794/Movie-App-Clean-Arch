@@ -18,7 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieDetailsViewModel @Inject constructor(private val movieDetailsUseCase: GetMovieDetailsUseCase,savedStateHandle: SavedStateHandle) : ViewModel() {
 
-    private val _movieDetailsStateHolder = mutableStateOf(MovieDetailsStateHolder())
+     val _movieDetailsStateHolder = mutableStateOf(MovieDetailsStateHolder())
     val movieDetailsStateHolder : State<MovieDetailsStateHolder> = _movieDetailsStateHolder
 
     init {

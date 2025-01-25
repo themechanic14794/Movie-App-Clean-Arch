@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.movieapp.presentation.movies.screens.MovieListScreen
 import com.example.movieapp.presentation.movies.screens.MovieDetailsScreen
+import com.example.movieapp.presentation.movies.screens.MovieImageScreen
 
 @Composable
 fun MovieNavigation(navHostController: NavHostController) {
@@ -19,9 +20,15 @@ fun MovieNavigation(navHostController: NavHostController) {
         }
 
         composable(MovieNavigationItem.MovieDetails.route+"/{id}"){
-            val id = it.arguments?.getString("id")
-            Log.d("MovieDetailsScreen",""+id)
+//            val id = it.arguments?.getString("id")
+//            Log.d("MovieDetailsScreen",""+id)
             MovieDetailsScreen()
+        }
+
+        composable(MovieNavigationItem.MovieImage.route+"/{id}"){
+//            val id = it.arguments?.getString("id")
+//            Log.d("MovieDetailsScreen",""+id)
+            MovieImageScreen()
         }
     }
 }

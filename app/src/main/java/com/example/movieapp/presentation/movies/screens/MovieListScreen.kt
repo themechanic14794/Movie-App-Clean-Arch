@@ -50,8 +50,14 @@ fun MovieListScreen(navHostController: NavHostController, viewModel: MovieViewMo
             if (result.data!=null) {
                 LazyColumn(modifier = Modifier.testTag("movie_list")) {
                     items(result.data) {
-                        MovieItem(it) {
-                            navHostController.navigate(MovieNavigationItem.MovieDetails.route + "/$it")
+                        MovieItem(it) { id,isFromCard ->
+                            if (isFromCard) {
+                                navHostController.navigate(MovieNavigationItem.MovieDetails.route + "/$id")
+                            }
+                            else{
+                                navHostController.navigate(MovieNavigationItem.MovieImage.route + "/$id")
+                            }
+
                         }
                     }
                 }

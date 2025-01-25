@@ -26,7 +26,7 @@ import com.example.movieapp.R
 import com.example.movieapp.domain.model.list.Movie
 
 @Composable
-fun MovieItem(movie: Movie, onClick:(String)->Unit) {
+fun MovieItem(movie: Movie, onClick:(String,Boolean)->Unit) {
 
     Row(modifier = Modifier
         .fillMaxWidth()
@@ -39,7 +39,7 @@ fun MovieItem(movie: Movie, onClick:(String)->Unit) {
                 .wrapContentHeight()
                 .fillMaxWidth(0.8f)
                 .clickable {
-                    onClick.invoke(movie.id.toString())
+                    onClick.invoke(movie.id.toString(),true)
                 }
         ){
             Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
@@ -51,6 +51,7 @@ fun MovieItem(movie: Movie, onClick:(String)->Unit) {
                         .fillMaxWidth()
                         .height(300.dp)
                         .testTag("movieImage")
+                        .clickable { onClick.invoke(movie.id.toString(),false) }
                     , contentScale = ContentScale.None)
 
                 Text(text = movie.title, modifier = Modifier
